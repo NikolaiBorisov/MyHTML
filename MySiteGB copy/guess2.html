@@ -1,0 +1,79 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NB_WEBSITE</title>
+			<link rel="shortcut icon" href="img/GeekBrains.ru.jpg"/>
+			<link rel="stylesheet" href="style.css">
+			<script type="text/javascript">
+
+				var answer = parseInt(Math.random() * 100);
+				var playerNumber = 1;
+
+				function readInt(){
+					var number = document.getElementById("userAnswer1").value
+					return parseInt(number);
+					// return +document.getElementById("userAnswer").value;
+				}
+				function write(text){
+					document.getElementById("info").innerHTML = text
+				}
+				function hide(id){
+					document.getElementById(id).style.display = "none";
+				}
+				function guess(){
+					var userAnswer1 = readInt();
+					if(userAnswer1 == answer){
+						write("<b>Поздравляю, победил игрок " + playerNumber + "</b>");
+						hide("button");
+						hide("userAnswer1");
+					} else if(userAnswer1 > answer){
+						changePlayer();
+						write("Вы ввели слишком большое число<br>Ходит игрок  " + playerNumber + ".<br> Введите число от 1 до 100");
+					} else if(userAnswer1 < answer){
+						changePlayer();
+						write("Вы ввели слишком маленькое число<br>Ходит игрок  " + playerNumber + ".<br> Введите число от 1 до 100");					
+					}
+				}
+				function changePlayer(){
+					if(playerNumber == 1)
+						playerNumber = 2;
+					else
+						playerNumber = 1;
+				}
+					
+</script>
+</head>
+	<body>
+	<div class="content">
+		<div class="header">
+			<a href="index.html"> HOME</a>
+			<a href="riddles.html"> RIDDLES</a>
+			<a href="guess2.html"> TRY TO GUESS</a>
+			<a href="randomPassword.html"> RANDOM PASSWORD</a>
+		</div>
+
+		<div class="contentWrap">
+   			 <div class="content">
+        		<div class="center">
+
+			<h1>Игра угадайка мультиплеер</h1>
+
+			<div class="box">
+				<p id="info">Угадайте число от 0 до 100<br>
+				Ходит игрок под номером 1.
+				</p>
+				<input type="text" id="userAnswer1"><br><br>
+				<a href="#" onClick="guess();" id="button">Начать</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			
+<div class="footer">
+	Copyright &copy; NB_Nikolai Borisov
+</div>
+
+</body>
+</html>

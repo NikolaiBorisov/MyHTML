@@ -1,0 +1,75 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NB_WEBSITE</title>
+			<link rel="shortcut icon" href="img/GeekBrains.ru.jpg"/>
+			<link rel="stylesheet" href="style.css">
+			<script type="text/javascript">
+
+				var score = 0;
+
+				function checkAnswer(inputId, answers){
+					var userAnswer = document.getElementById(inputId).value;
+					userAnswer = userAnswer.toLowerCase();
+					for(var i = 0; i < answers.length; i++){
+						if(userAnswer == answers[i]){
+							score++;
+							break;
+						} 
+					}
+				}
+				function checkAnswers(){
+					checkAnswer("userAnswer1", ["gora","гора"]);
+					checkAnswer("userAnswer2", ["zybi","зубы"]);
+					checkAnswer("userAnswer3", ["veter","ветер"]);
+					checkAnswer("userAnswer4", ["vremya","время"]);
+
+					alert("Вы отгадали: " + score + " загадки" + "\nПопытаться снова: нажмите F5");
+				}
+
+ 			</script>
+</head>
+	<body>
+		<div class="content">
+			<div class="header">
+			<a href="index.html"> HOME</a>
+			<a href="riddles.html"> RIDDLES</a>
+			<a href="guess2.html"> TRY TO GUESS</a>
+			<a href="randomPassword.html"> TRY TO GUESS</a>
+		</div>
+
+<div class="contentWrap">
+    <div class="content">
+        <div class="center">
+
+			<h1>Игра в загадки</h1>
+
+				<div class="box">
+
+				<p>"У чего не видать корней, но что выше тополей? Вверх, вверх, вверх оно идет, и все же...и все же не растет! Что это?"</p>
+				<input type="text" id="userAnswer1">
+
+				<p>"Тридцать белых коней на красном холме - сначала сойдутся, потом разойдутся, и замрут в тишине... Что это?"</p>
+				<input type="text" id="userAnswer2">
+
+				<p>"Без голоса кричит, без зубов кусает, без крыльев летит, без горла завывает... Что это?"</p>
+				<input type="text" id="userAnswer3">
+				
+				<p>"Уничтожает всё кругом цветы, зверей, деревья, дом, жуёт железо, сталь сожрёт, и скалы в порошок сотрёт... Что это?"</p>
+				<input type="text" id="userAnswer4">
+				<br>
+				<br>
+				<a href="#" onClick="checkAnswers();">Ответить</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		
+	<div class="footer">
+		Copyright &copy; NB_Nikolai Borisov
+	</div>
+
+</body>
+</html>

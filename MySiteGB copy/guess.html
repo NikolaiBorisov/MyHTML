@@ -1,0 +1,101 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NB_WEBSITE</title>
+			<link rel="shortcut icon" href="img/GeekBrains.ru.jpg"/>
+			<link rel="stylesheet" href="style.css">
+			<script type="text/javascript">
+
+				var answer = parseInt(Math.random() * 100);
+				var tryCount = 0;
+				var maxTryCount = 3;
+				function readInt(){
+					var number = document.getElementById("userAnswer1").value
+					return parseInt(number);
+					// return +document.getElementById("userAnswer").value;
+				}
+				function write(text){
+					document.getElementById("info").innerHTML = text
+				}
+				function hide(id){
+					document.getElementById(id).style.display = "none";
+				}
+				function guess(){
+					tryCount++;
+
+					var userAnswer1 = readInt();
+					if(userAnswer1 == answer){
+						write("<b>Поздравляю, вы угадали!</b>");
+						hide("button");
+						hide("userAnswer1");
+					} else if(tryCount >= maxTryCount){
+						write("Вы проиграли<br>Правильный ответ: " + answer);
+						hide("button");
+						hide("userAnswer1");
+					} else if(userAnswer1 > answer){
+						write("Вы ввели слишком большое число<br>Попробуйте еще раз. Введите число от 1 до 100");
+					} else if(userAnswer1 < answer){
+						write("Вы ввели слишком маленькое число<br>Попробуйте еще раз. Введите число от 1 до 100");					
+					}
+				}
+				var answer2 = parseInt(Math.random() * 100);
+				var tryCount2 = 0;
+				var maxTryCount2 = 3;
+				function readInt2(){
+					var number2 = document.getElementById("userAnswer2").value
+					return parseInt(number2);
+					// return +document.getElementById("userAnswer").value;
+				}
+				function write2(text){
+					document.getElementById("info2").innerHTML = text
+				}
+				function hide2(id){
+					document.getElementById(id).style.display = "none";
+				}
+				function guess2(){
+					tryCount2++;
+
+					var userAnswer2 = readInt2();
+					if(userAnswer2 == answer2){
+						write2("<b>Поздравляю, вы угадали!</b>");
+						hide2("button2");
+						hide2("userAnswer2");
+					} else if(tryCount2 >= maxTryCount2){
+						write2("Вы проиграли<br>Правильный ответ: " + answer2);
+						hide2("button2");
+						hide2("userAnswer2");
+					} else if(userAnswer2 > answer2){
+						write2("Вы ввели слишком большое число<br>Попробуйте еще раз. Введите число от 1 до 100");
+					} else if(userAnswer2 < answer2){
+						write2("Вы ввели слишком маленькое число<br>Попробуйте еще раз. Введите число от 1 до 100");					
+					}
+				}
+					
+</script>
+</head>
+	<body>
+		<div class="header">
+			<a href="index.html"> HOME</a>
+			<a href="riddles.html"> RIDDLES</a>
+			<a href="guess.html"> TRY TO GUESS</a>
+			<a href="randomPassword.html"> RANDOM PASSWORD</a>
+		</div>
+
+			<h1>Игра угадайка</h1>
+
+			<div class="box">
+				<p id="info">Игрок номер 1.Угадайте число от 0 до 100</p>
+				<input type="text" id="userAnswer1"><br><br>
+				<a href="#" onClick="guess();" id="button">Начать</a>
+				<p id="info2">Игрок номер 2.Угадайте число от 0 до 100</p>
+				<input type="text2" id="userAnswer2"><br><br>
+				<a href="#" onClick="guess2();" id="button2">Начать</a>
+			</div>
+			
+<div class="footer">
+	Copyright &copy; NB_Nikolai Borisov
+</div>
+
+</body>
+</html>
